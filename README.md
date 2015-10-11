@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
@@ -26,3 +27,6 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 =======
 # cotinga
 >>>>>>> ef70b0aaf62cb742740672261f89ae15320fa0b9
+=======
+# cotinga
+>>>>>>> c845f682d39453f84afddb208194c707a8fac672
