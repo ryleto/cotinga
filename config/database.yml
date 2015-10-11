@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+  username: root
+  password:
+
+development:
+  <<: *default
+  database: cotinga_dev
+
+test:
+  <<: *default
+  database: cotinga_test
+
+production:
+  <<: *default
+  database: cotinga
