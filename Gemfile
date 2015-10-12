@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# core libraries
 gem 'rails', '4.2.1'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
@@ -12,6 +13,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# helpers
+gem 'active_link_to', '~> 1.0.3'
 
 group :development, :test do
   gem 'byebug'
