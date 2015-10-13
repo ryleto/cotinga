@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get    'products'=> 'static_pages#products'
   get    'contact' => 'static_pages#contact'
   get    'dashboard' => 'static_pages#dashboard'
+  
+  resources :users
 end
