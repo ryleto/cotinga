@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :articles
   devise_for :admins
   devise_for :users
   # static page routes
@@ -11,4 +10,5 @@ Rails.application.routes.draw do
   get    'dashboard' => 'static_pages#dashboard'
   
   resources :users
+  resources :articles, constraints: { format: :html }
 end
