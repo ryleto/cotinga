@@ -4,7 +4,6 @@ class CreateArticles < ActiveRecord::Migration
       t.timestamp :pubdate
       t.string :title
       t.text :body
-      t.text :commentary
       t.string :source
       t.boolean :publish
       t.string :created_by

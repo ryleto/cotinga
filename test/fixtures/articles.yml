@@ -1,20 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  pubdate: 2015-10-16 16:43:07
+  pubdate: 2015-10-16 17:16:21
   title: MyString
   body: MyText
-  commentary: MyText
   source: MyString
   publish: false
   created_by: MyString
   updated_by: MyString
 
 two:
-  pubdate: 2015-10-16 16:43:07
+  pubdate: 2015-10-16 17:16:21
   title: MyString
   body: MyText
-  commentary: MyText
   source: MyString
   publish: false
   created_by: MyString

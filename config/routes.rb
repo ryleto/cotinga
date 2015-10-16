@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get    'dashboard' => 'static_pages#dashboard'
   
   resources :users
-  resources :articles, constraints: { format: :html }
+  resources :articles
 end
