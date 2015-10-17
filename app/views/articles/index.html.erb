@@ -4,8 +4,9 @@
 <%= will_paginate %>
 
 <ul class="users">
+  
   <% @articles.each do |article| %>
-      <%= link_to article.title, article %>
+    <li><%= link_to article.title, article %> <small><%= article.pubdate %></small></li>
   <% end %>
 </ul>
 
