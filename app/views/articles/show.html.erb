@@ -12,8 +12,19 @@
       </p>
     </section>
     <br>
-    <%= link_to "View Source", @article.source, class: "btn btn-default pull-right", target: "_blank" %>&nbsp;&nbsp;
+    <%= link_to "View Source", @article.source, class: "btn btn-default pull-right", target: "_blank" %>
     <%= link_to "Edit", edit_article_path(@article), class: "btn btn-default pull-right" %>
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Add Comment
+    </button>
+    
+    <!-- Modal -->
+    <section class="comment_form">
+        <%= render 'shared/comment_form' %>
+    </section>
+    
     </div>
     <aside class="col-md-4">
         <h4>Related Items</h4>
