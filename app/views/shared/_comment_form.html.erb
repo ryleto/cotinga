@@ -1,0 +1,25 @@
+<%= form_for Comment.new do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Post new comment</h4>
+      </div>
+      <div class="modal-body">
+        <div class="field">
+        <%= f.text_area :content, placeholder: "write a new comment..." %>
+        </div>
+        <%= f.hidden_field :commentable_id, :value => @article.id %>
+        <%= f.hidden_field :commentable_type, :value => "Article" %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

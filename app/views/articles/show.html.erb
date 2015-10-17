@@ -25,6 +25,14 @@
         <%= render 'shared/comment_form' %>
     </section>
     
+    <% if @article.comments.any? %>
+      <h3>Comments (<%= @article.comments.count %>)</h3>
+      <ol class="comments">
+        <%= render @comments %>
+      </ol>
+      <%= will_paginate @comments %>
+    <% end %>
+    
     </div>
     <aside class="col-md-4">
         <h4>Related Items</h4>
