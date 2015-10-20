@@ -13,14 +13,14 @@
       <%= f.text_field :title, class: 'form-control' %>
       
       <%= f.label :body %>
-      <%= f.text_area :body, class: 'form-control' %>
+      <%= f.text_area :body, size: "25x15", class: 'form-control' %>
       
       <%= f.label :source %>
       <%= f.text_field :source, class: 'form-control' %>
       
       <%= f.label :publish %>
       <%= f.check_box :publish, class: 'form-control' %>
-
+      <br>
       <%= f.submit "Save", class: "btn btn-primary" %>
     <% end %>
   </div>
