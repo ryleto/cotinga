@@ -1,19 +1,9 @@
 <% provide(:title, @user.email) %>
 <div class="row">
-    <h1 class="pull-left">
-        <%= @user.email %>
-    </h1>
-</div>
-<br>
-<% provide(:title, @user.email) %>
-<div class="row">
-  <aside class="col-md-12 col-md-offset-3">
-    <section class="user_info">
-      <h1>
-        <%= @user.email %><br>
+  <div class="col-md-12 col-md-offset-3">
+    <h1><%= @user.email %> - My Account</h1><br>
         Name: <%= @user.email %><br>
         Email: <%= @user.email %>
-      </h1>
-    </section>
-  </aside>
+    </p>
+  </div>
 </div>
