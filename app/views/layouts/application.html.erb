@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Workspace</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-eval' => false %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -22,9 +22,5 @@
   <%= render 'layouts/footer' %>
   <%= debug(params) if Rails.env.development? %>
 
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
