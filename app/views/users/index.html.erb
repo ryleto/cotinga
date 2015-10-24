@@ -1,14 +1,35 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
 
-<%= will_paginate %>
-
-<ul class="users">
-    <% @users.each do |user| %>
-      <li>
-      <%= link_to user.email, user %>
-      </li>
-    <% end %>
-</ul>
-
-<%= will_paginate %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= will_paginate %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <th>User</th>
+          <th>Email</th>
+          <th>Logins</th>
+          <th>Last Activity</th>
+          <th>Action</th>
+        </thead>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= link_to user.name, user %></td>
+            <td><%= link_to user.email, user %></td>
+            <td><%= link_to user.sign_in_count, user %></td>
+            <td><small><i><%= time_ago_in_words(user.last_sign_in_at) %></i></small></td>
+            <td>
+              <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
+              <% if current_user.email? %>
+              <%= link_to "edit", edit_user_registration_path, class:"btn btn-default" %>
+              <%= link_to "delete", class:"btn btn-default" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <%= will_paginate %>
+  </div>
+</div>
