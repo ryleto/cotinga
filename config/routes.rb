@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'messages/new'
+
   devise_for :admins
   devise_for :users
   # static page routes
