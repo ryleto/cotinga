@@ -4,14 +4,20 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:contact])
-    @message.request = request
-    if @message.deliver
-      flash.now[:error] = nil
-      flash.now[:notice] = 'Thank you, your message has been sent!'
+    @message = Message.new(message_params)
+    
+    if @message.valid?
+      MessageMailer.new_message(@message).deliver
+      redirect_to contact_path, notice: "Thank you. Your message has been sent."
     else
-      flash.now[:error] = 'Unable to send message.'
+      flash[:alert] = "An error occurred while delivering this message."
       render :new
     end
   end
+
+  private
+
+    def message_params
+      params.require(:message).permit(:name, :email, :content)
+    end
 end
