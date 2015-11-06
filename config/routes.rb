@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   root                'static_pages#home'
   get    'about'   => 'static_pages#about'
   get    'products'=> 'static_pages#products'
-  get    'contact' => 'static_pages#contact'
+  #get    'contact' => 'static_pages#contact'
   get    'dashboard' => 'static_pages#dashboard'
+  get 'contact', to: 'messages#new', as: 'contact'
+  post 'contact', to: 'messages#create'
   
   resources :users
   resources :articles
