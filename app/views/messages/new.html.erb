@@ -6,19 +6,16 @@
     <%= form_for @message, url: contact_path do |message_form| %>
       <fieldset>
         <div class="field">
-          <%= message_form.text_field :name, placeholder: "Name" %>
-        </div>
+          <%= message_form.text_field :name, placeholder: "Name", class: 'form-control' %>
+        </div><br>
         
         <div class="field">
-          <%= message_form.email_field :email, placeholder: "Email"%>
-        </div>
-        
-        <%= message_form.label :email %>
-        <%= message_form.email_field :email, placeholder: "email address", class: 'form-control' %>
+          <%= message_form.email_field :email, placeholder: "Email Address", class: 'form-control' %>
+        </div><br>
         
         <div class="field">
-          <%= message_form.text_area :content, placeholder: "Message"%>
-        </div>
+          <%= message_form.text_area :content,placeholder: "Your Message", size: "25x6", class: 'form-control' %>
+        </div><br>
       </fieldset>
       
       <fieldset>
