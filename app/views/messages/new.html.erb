@@ -13,6 +13,9 @@
           <%= message_form.email_field :email, placeholder: "Email"%>
         </div>
         
+        <%= message_form.label :email %>
+        <%= message_form.email_field :email, placeholder: "email address", class: 'form-control' %>
+        
         <div class="field">
           <%= message_form.text_area :content, placeholder: "Message"%>
         </div>
@@ -20,7 +23,7 @@
       
       <fieldset>
         <div class="field">
-          <%= message_form.submit "Send" %>
+          <%= message_form.submit "Send", class: "btn btn-primary" %>
         </div>
       </fieldset>
     <% end %>
