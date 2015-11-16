@@ -3,7 +3,13 @@
   <div class="col-md-8 col-md-offset-2">
     <h1><%= @user.name %> - My Account</h1><br>
         Name: <%= @user.name %><br>
-        Email: <%= @user.email %>
+        Username: <%= @user.username || "N/A" %><br>
+        Affiliation: <%= @user.company || "N/A" %><br>
+        Email: <%= @user.email %><br>
+        Role: <%= @user.role || "N/A" %><br>
+        Login Count: <%= @user.sign_in_count %><br>
+        Last Activity: <%= @user.last_sign_in_at %><br>
+        Active Since: <%= @user.created_at %><br>
     </p>
   </div>
 </div>
