@@ -20,9 +20,11 @@
       
       <%= f.label :publish %>
       <%= f.check_box :publish, class: 'form-control' %>
-      <br>
+      <p class="pull-right">
+      <%= link_to "Cancel", :back, class: "btn btn-default" %>
       <%= f.submit "Save", class: "btn btn-primary" %>
+      </p>
     <% end %>
-    <%= link_to "Cancel", :back, class: "btn btn-default" %>
+    
   </div>
 </div>
