@@ -63,9 +63,18 @@ p {
 }
 
 /* elements */
-.ghost-button {
+a.btn-ghost {
+  color:#ffffff;
   border:2px solid #ffffff;
-  padding:1px 15px;
+  background:transparent;
+  padding:5px 15px;
+  font-weight:bold;
+  margin-top:9px;
+}
+a.btn-ghost:hover {
+  color:#009999;
+  border:2px solid #009999;
+  text-decoration:none;
 }
 
 /* header */
