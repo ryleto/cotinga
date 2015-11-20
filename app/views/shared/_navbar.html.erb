@@ -38,7 +38,7 @@
           </ul>
         </li>
         <% else %>
-        <li><%= active_link_to 'Login', new_user_session_path, :class_active => 'active', :wrap_tag => :li %></li>
+        <li><%= active_link_to 'Login', new_user_session_path, class: "ghost-button" %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
