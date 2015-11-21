@@ -9,6 +9,9 @@ class UsersController < ApplicationController
   
     def show
         @user = User.find(params[:id])
+        unless @user == current_user || current_user.admin?
+          redirect_to :back
+        end
     end
     
     def new
@@ -56,7 +59,7 @@ class UsersController < ApplicationController
           if current_user.admin
              return
           else
-             redirect_to root_url 
+             redirect_to :back 
           end
         end
 end

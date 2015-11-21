@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
     
     def index
         if params[:tag]
-            @articles = Article.tagged_with(params[:tag])
+            @articles = Article.tagged_with(params[:tag]).paginate(page: params[:page])
         else
             @articles = Article.paginate(page: params[:page])
         end
