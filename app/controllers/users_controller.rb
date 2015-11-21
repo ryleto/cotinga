@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
+    #before_action :correct_user, only: [:show, :edit, :update]
+    before_action :user_privilege, :only => [:index, :destroy]
     
     def index
         @users = User.paginate(page: params[:page])
@@ -37,5 +39,23 @@ class UsersController < ApplicationController
     
         def user_params
           params.require(:user).permit(:name, :company, :email, :password, :password_confirmation)
+        end
+        
+        # confirms current user matches requested user data
+        #def correct_user
+        #  if user_signed_in?
+        #    @user = User.find(params[:id])
+        #    redirect_to(root_url) unless current_user?(@user)
+        #  end
+        #end
+    
+        def user_privilege
+          authenticate_user!
+        
+          if current_user.admin
+             return
+          else
+             redirect_to root_url 
+          end
         end
 end
