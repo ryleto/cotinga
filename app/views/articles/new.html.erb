@@ -20,6 +20,10 @@
       
       <%= f.label :publish %>
       <%= f.check_box :publish, class: 'form-control' %>
+
+      <%= f.label :tag_list, "Tags (separated by commas)", class: 'form-control' %><br />
+      <%= f.text_field :tag_list %>
+
       <br>
       <%= f.submit "Save", class: "btn btn-primary" %>
     <% end %>

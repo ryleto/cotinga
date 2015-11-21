@@ -2,7 +2,11 @@ class ArticlesController < ApplicationController
     before_action :authenticate_user!
     
     def index
-        @articles = Article.paginate(page: params[:page])
+        if params[:tag]
+            @articles = Article.tagged_with(params[:tag])
+        else
+            @articles = Article.paginate(page: params[:page])
+        end
     end
     
     def show
@@ -47,6 +51,6 @@ class ArticlesController < ApplicationController
     private
     
         def article_params
-          params.require(:article).permit(:pubdate, :title, :body, :source, :publish)
+          params.require(:article).permit(:pubdate, :title, :body, :source, :publish, :tag_list)
         end
 end

@@ -25,7 +25,8 @@ class UsersController < ApplicationController
           flash[:success] = "Profile updated"
           redirect_to @user
         else
-          render "registrations/edit"
+          flash[:danger] = "There was a problem updating your account"
+          redirect_to edit_user_path(current_user)
         end
     end
     

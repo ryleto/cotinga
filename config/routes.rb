@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get    'dashboard' => 'static_pages#dashboard'
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
+  get 'tags/:tag', to: 'articles#index', as: :tag
   
   resources :users
   resources :articles
