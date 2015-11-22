@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
     before_action :set_user
-    #before_action :correct_user, only: [:show, :edit, :update]
-    #before_action :user_privilege, :only => [:show, :edit, :update]
+    before_action :user_privilege, :only => [:show, :edit, :update]
     before_action :admin_only, :except => [:show, :edit, :update]
     
     def index
@@ -51,23 +50,17 @@ class UsersController < ApplicationController
           params.require(:user).permit(:name, :company, :email, :password, :password_confirmation)
         end
         
-        # confirms current user matches requested user data
-        #def correct_user
-        #  if user_signed_in?
-        #    @user = User.find(params[:id])
-        #    redirect_to(root_url) unless current_user?(@user)
-        #  end
-        #end
+        def user_privilege
+            if user_signed_in?
+                unless @user == current_user || current_user.admin?
+                    redirect_to(root_url)
+                end
+            end
+        end
         
         def admin_only
             unless current_user.admin?
               redirect_to :back, :alert => "Access denied."
-            end
-        end
-  
-        def user_privilege
-            unless @user == current_user || current_user.admin?
-              redirect_to :back
             end
         end
 end
