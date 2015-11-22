@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
+    before_action :set_user
     #before_action :correct_user, only: [:show, :edit, :update]
-    before_action :user_privilege, :only => [:index, :destroy]
+    #before_action :user_privilege, :only => [:show, :edit, :update]
+    before_action :admin_only, :except => [:show, :edit, :update]
     
     def index
         @users = User.paginate(page: params[:page])
     end
   
     def show
-        @user = User.find(params[:id])
         unless @user == current_user || current_user.admin?
           redirect_to :back
         end
@@ -19,11 +20,12 @@ class UsersController < ApplicationController
     end
     
     def edit
-        @user = User.find(params[:id])
+        unless @user == current_user || current_user.admin?
+          redirect_to :back
+        end
     end
     
     def update
-        @user = User.find(params[:id])
         if @user.update_attributes(user_params)
           flash[:success] = "Profile updated"
           redirect_to @user
@@ -40,7 +42,11 @@ class UsersController < ApplicationController
     end
     
     private
-    
+        
+        def set_user
+            @user = User.find(params[:id])
+        end
+        
         def user_params
           params.require(:user).permit(:name, :company, :email, :password, :password_confirmation)
         end
@@ -52,14 +58,16 @@ class UsersController < ApplicationController
         #    redirect_to(root_url) unless current_user?(@user)
         #  end
         #end
-    
-        def user_privilege
-          authenticate_user!
         
-          if current_user.admin
-             return
-          else
-             redirect_to :back 
-          end
+        def admin_only
+            unless current_user.admin?
+              redirect_to :back, :alert => "Access denied."
+            end
+        end
+  
+        def user_privilege
+            unless @user == current_user || current_user.admin?
+              redirect_to :back
+            end
         end
 end
