@@ -11,5 +11,7 @@
         Last Activity: <%= @user.last_sign_in_at %><br>
         Active Since: <%= @user.created_at %><br>
     </p>
+    
+    <%= link_to 'Edit Account', edit_user_path(current_user), class: 'btn btn-default' %>
   </div>
 </div>
