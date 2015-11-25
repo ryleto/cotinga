@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_user
+    before_action :set_user, :except => [:index]
     before_action :user_privilege, :only => [:show, :edit, :update]
     before_action :admin_only, :except => [:show, :edit, :update]
     
