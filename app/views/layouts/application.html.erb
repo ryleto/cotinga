@@ -10,12 +10,7 @@
 
   <%= render partial: "shared/navbar" unless current_page?(new_user_session_path) %>
   
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+  <%= flash_messages %>
   
   <%= yield %>
 
