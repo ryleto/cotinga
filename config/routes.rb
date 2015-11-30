@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   
   # static page routes
-  root                   'static_pages#home'
+  root                 'static_pages#home'
   get   'about'     => 'static_pages#about'
   get   'products'  => 'static_pages#products'
   get   'dashboard' => 'static_pages#dashboard'
