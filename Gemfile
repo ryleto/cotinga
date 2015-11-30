@@ -16,7 +16,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 gem 'acts-as-taggable-on', '~> 3.5'
-gem 'bootstrap-growl-rails', '~> 3.1', '>= 3.1.3'
 
 # helpers
 gem 'active_link_to', '~> 1.0.3'

@@ -10,7 +10,20 @@
 
   <%= render partial: "shared/navbar" unless current_page?(new_user_session_path) %>
   
-  <%= flash_messages %>
+  <% flash.each do |type, content| %>
+    <% if content.respond_to?('each') 
+        content.each do |item| %>
+            <%= render 'layouts/alert', 
+                type: type,
+                content: item %>
+        <% end %>
+    <% else %>
+        <%= render 'layouts/alert', 
+                type: type,
+                content: content %>
+    <% end %>
+
+  <% end %>
   
   <%= yield %>
 
