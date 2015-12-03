@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments, dependent: :destroy
-  belongs_to :affiliations
+  belongs_to :account, touch: true
   
   enum role: [:subscriber, :client, :editor, :researcher]
   after_initialize :set_default_role, :if => :new_record?
