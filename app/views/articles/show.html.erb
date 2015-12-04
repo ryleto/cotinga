@@ -22,11 +22,12 @@
           </div>
           <div class="panel-body">
               <div class="scrollable" ui-jq="scrollbar" ui-options="{ ignoreOverlay: false }">
-                  <div class="demo-portlet-scrollable">
+                  <div class="demo-portlet-scrollable-extended">
                       <h3><%= @article.title %></h3>
-                      <p>
-                      <%= @article.body.html_safe %>
-                      </p>
+                      <hr>
+                        <section>
+                          <p><%= @article.body.html_safe %></p>
+                        </section>
                   </div>
               </div>
           </div>
