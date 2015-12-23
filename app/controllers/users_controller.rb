@@ -50,6 +50,10 @@ class UsersController < ApplicationController
           params.require(:user).permit(:name, :company, :email, :password, :password_confirmation)
         end
         
+        def secure_params
+          params.require(:user).permit(:role)
+        end
+        
         def user_privilege
             if user_signed_in?
                 unless @user == current_user || current_user.admin?
