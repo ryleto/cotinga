@@ -11,22 +11,12 @@
           <th>Email</th>
           <th>Logins</th>
           <th>Last Activity</th>
+          <th>Role</th>
           <th>Action</th>
         </thead>
         <% @users.each do |user| %>
           <tr>
-            <td><%= link_to user.name, user %></td>
-            <td><%= link_to user.email, user %></td>
-            <td><%= link_to user.sign_in_count, user %></td>
-            <td><small><i><%= time_ago_in_words(user.last_sign_in_at) %></i></small></td>
-            <td>
-              <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
-              <% if current_user.email? %>
-              <%= link_to "edit", edit_user_registration_path, class:"btn btn-default" %>
-              <%= link_to "delete", user, method: :delete, data: { confirm: "Are you sure you want to delete this user?" }, class:"btn btn-default" %>
-              <% end %>
-              </div>
-            </td>
+            <%= render user %>
           </tr>
         <% end %>
       </table>
