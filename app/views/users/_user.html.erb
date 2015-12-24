@@ -4,14 +4,14 @@
 <td><small><i><%= time_ago_in_words(user.last_sign_in_at) %></i></small></td>
 <td>
   <%= form_for(user) do |f| %>
-    <%= f.select(:role, User.roles.keys.map {|role| [role.titleize, role]}) %>
+    <%= f.select(:role, User.roles.keys.map {|role| [role.titleize, role]}, :selected => params[:role]) %>
     <%= f.submit 'Change Role', :class => 'btn btn-primary btn-xs' %>
   <% end %>
 </td>
 <td>
   <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
   <% if current_user.email? %>
-  <%= link_to "edit", edit_user_registration_path(id: user.id), class:"btn btn-default" %>
+  <%= link_to "edit", edit_user_registration_path(user), class:"btn btn-default" %>
   <%= link_to "delete", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete this user?" }, class:"btn btn-default" %>
   <% end %>
   </div>

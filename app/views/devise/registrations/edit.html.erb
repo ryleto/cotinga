@@ -21,7 +21,7 @@
     
     <div class="field">
       <%= f.label :role, "User Role" %>
-      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize, role]}, :selected => params[:role]) %>
+      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize, role]}) %>
     </div>
     
     <div class="field">
