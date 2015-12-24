@@ -18,7 +18,12 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  
+    
+    <div class="field">
+      <%= f.label :role, "User Role" %>
+      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize, role]}, :selected => params[:role]) %>
+    </div>
+    
     <div class="field">
       <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
       <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
