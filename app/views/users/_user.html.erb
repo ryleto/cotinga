@@ -7,6 +7,7 @@
     <%= f.select(:role, User.roles.keys.map {|role| [role.titleize, role]}, :selected => params[:role]) %>
     <%= f.submit 'Change Role', :class => 'btn btn-primary btn-xs' %>
   <% end %>
+  <%= user.role %>
 </td>
 <td>
   <div class="btn-group btn-group-xs" role="toolbar" aria-label="...">
