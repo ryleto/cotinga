@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
-    after_action :verify_authorized
+    before_action :set_user, :except => [:index]
+    before_action :user_privilege, :only => [:show, :edit, :update]
+    before_action :admin_only, :except => [:show, :edit, :update]
     
     def index
         @users = User.paginate(page: params[:page])
