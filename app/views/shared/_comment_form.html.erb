@@ -8,7 +8,7 @@
         <h4 class="modal-title" id="myModalLabel">Post new comment</h4>
       </div>
       <div class="modal-body">
-        <div class="field">
+      <div class="field">
         <%= f.text_area :content, placeholder: "write a new comment..." %>
         </div>
         <%= f.hidden_field :commentable_id, :value => @article.id %>
