@@ -63,6 +63,6 @@
     <aside class="col-md-2">
         <h4>Related Items</h4>
         Article Tags:<br>
-        <%= raw @article.tag_list.map { |t| link_to t, tag_path(t) }.join(', '), class: "btn btn-default" %>
+        <%= raw @article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
     </aside>
 </div>
