@@ -16,15 +16,5 @@ Rails.application.routes.draw do
   resources :articles
   resources :comments, only: [:create, :destroy]
   resources :messages, only: [:new, :create]
-  resources :files, :except => [:index, :new, :create]
-  
-  # Nested resources
-  resources :folders, :shallow => true, :except => [:new, :create] do
-    resources :folders, :only => [:new, :create]
-    resources :files, :only => [:new, :create]
-  end
 
-  resources :files, :shallow => :true, :only => :show do
-    resources :share_links, :only => [:new, :create]
-  end
 end
