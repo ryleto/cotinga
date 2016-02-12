@@ -1,11 +1,11 @@
-$linkColor: #0069d6 !default;
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-
+$linkColor: #0069d6 !default;
 $gray-medium-light: #eaeaea;
+$primary-blue: #0099ff;
+$primary-font-set: 'Montserrat', arial, sans-serif;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -68,17 +68,19 @@ a.btn-ghost {
   border:2px solid #ffffff;
   background:transparent;
   padding:5px 15px;
-  font-weight:bold;
   margin-top:11px;
   text-transform:uppercase;
-  font-size:12px;
+  font: {
+    family: $primary-font-set;
+    size: 12px;
+    weight: bold;
+  }
 }
 a.btn-ghost:hover {
-  color:#00cccc;
-  border:2px solid #00cccc;
+  color: $primary-blue;
+  border:2px solid $primary-blue;
   text-decoration:none;
 }
-
 a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
   text-decoration:none;
 }
@@ -88,12 +90,15 @@ a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
-  font-weight: bold;
+  font: {
+    family: $primary-font-set;
+    size: 1.7em;
+    weight: bold;
+  }
   &:hover {
     color: white;
     text-decoration: none;
