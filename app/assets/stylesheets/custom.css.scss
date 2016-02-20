@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Montserrat);
 
 /* mixins, variables, etc. */
 $linkColor: #0069d6 !default;
@@ -315,3 +316,36 @@ span.picture {
   }
 }
 
+.navbar-brand {
+  font-size: inherit;
+}
+.navbar li {
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar li.active a,
+.navbar li.active a:hover,
+.navbar li.active a:focus {
+  border-color: #e6e6e6;
+  color: #626262;
+  background-color: #e6e6e6;
+}
+.navbar li a {
+  border-radius: 0;
+  margin-right: 0;
+  color: rgba(98, 98, 98, 0.7);
+  min-width: 70px;
+  text-transform: uppercase;
+  border-color: transparent;
+  font: {
+    family: $primary-font-set;
+    weight: 400;
+    size: 12px;
+  };
+}
+.navbar li a:hover,
+.navbar li a:focus {
+  background: transparent;
+  border-color: transparent;
+  color: #626262;
+}
