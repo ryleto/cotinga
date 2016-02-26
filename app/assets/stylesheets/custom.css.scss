@@ -35,7 +35,6 @@ textarea {
   }
 }
 
-
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -87,7 +86,6 @@ a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
 }
 
 /* header */
-
 #logo {
   float: left;
   margin-right: 10px;
@@ -106,34 +104,7 @@ a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
   }
 }
 
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-}
-
 /* miscellaneous */
-
 .debug_dump {
   clear: both;
   float: left;
@@ -143,7 +114,6 @@ footer {
 }
 
 /* sidebar */
-
 aside {
   section.user_info {
     margin-top: 20px;
