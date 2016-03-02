@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   # static page routes
   root                 'static_pages#home'
   get   'about'     => 'static_pages#about'
-  get   'products'  => 'static_pages#products'
   get   'dashboard' => 'static_pages#dashboard'
   get   'contact',  to: 'messages#new', as: 'contact'
   post  'contact',  to: 'messages#create'
