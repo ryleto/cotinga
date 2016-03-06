@@ -13,7 +13,7 @@
   <% flash.each do |type, content| %>
     <% if content.respond_to?('each') 
         content.each do |item| %>
-            <%= render 'layouts/alert', 
+            <%= render 'shared/alert', 
                 type: type,
                 content: item %>
         <% end %>
@@ -27,7 +27,7 @@
   
   <%= yield %>
 
-  <%= render 'layouts/footer' unless current_page?(new_user_session_path) %>
+  <%= render 'shared/footer' unless current_page?(new_user_session_path) %>
 
 </body>
 </html>
