@@ -18,11 +18,10 @@
                 content: item %>
         <% end %>
     <% else %>
-        <%= render 'layouts/alert', 
+        <%= render 'shared/alert', 
                 type: type,
                 content: content %>
     <% end %>
-
   <% end %>
   
   <%= yield %>
