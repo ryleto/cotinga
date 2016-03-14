@@ -13,11 +13,10 @@ gem 'carrierwave'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1', '>= 4.1.1'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'acts-as-taggable-on', '~> 3.5'
-
-# helpers
 gem 'active_link_to', '~> 1.0.3'
 
 group :development, :test do
