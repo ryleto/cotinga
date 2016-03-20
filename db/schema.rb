@@ -16,21 +16,6 @@ ActiveRecord::Schema.define(version: 20160229084400) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "account_id"
-    t.string   "name"
-    t.boolean  "status"
-    t.datetime "active_at"
-    t.datetime "expire_at"
-  end
-
-  create_table "affiliations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "articles", force: :cascade do |t|
     t.datetime "pubdate"
     t.string   "title"
@@ -60,13 +45,7 @@ ActiveRecord::Schema.define(version: 20160229084400) do
     t.datetime "updated_at",   null: false
     t.string   "company_name"
   end
-
-  create_table "folders", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
