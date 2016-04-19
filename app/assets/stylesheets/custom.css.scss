@@ -1,8 +1,22 @@
+/*------------------------------------------------------------------
+
+[SECTIONS]
+
+1. Imports 
+2. Variables
+3. Globals
+4. Layout
+5. UI Elements
+6. Forms
+
+-------------------------------------------------------------------*/
+
+/* IMPORTS */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans|Montserrat);
 
-/* mixins, variables, etc. */
+/* VARIABLES */
 $linkColor: #0069d6 !default;
 $gray-medium-light: #eaeaea;
 $primary-blue: #0099ff;
@@ -14,8 +28,7 @@ $primary-font-set: 'Montserrat', arial, sans-serif;
   box-sizing:         border-box;
 }
 
-/* global styles */
-
+/* GLOBALS */
 body {
   padding-top: 0;
 }
@@ -34,8 +47,6 @@ textarea {
     margin-bottom: 60px;
   }
 }
-
-/* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -62,30 +73,7 @@ p {
   line-height: 1.7em;
 }
 
-/* elements */
-a.btn-ghost {
-  color:#ffffff;
-  border:2px solid #ffffff;
-  background:transparent;
-  font: {
-    family: $primary-font-set;
-    size: 14px;
-    weight: bold;
-  }
-  padding:5px 15px;
-  margin-top:11px;
-  text-transform:uppercase;
-}
-a.btn-ghost:hover {
-  color: $primary-blue;
-  border:2px solid $primary-blue;
-  text-decoration:none;
-}
-a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
-  text-decoration:none;
-}
-
-/* header */
+/* LAYOUT */
 #logo {
   color: white;
   float: left;
@@ -104,13 +92,38 @@ a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
   }
 }
 
-/* miscellaneous */
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
+.navbar-brand {
+  font-size: inherit;
+}
+.navbar li {
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar li.active a,
+.navbar li.active a:hover,
+.navbar li.active a:focus {
+  border-color: #e6e6e6;
+  color: #626262;
+  background-color: #e6e6e6;
+}
+.navbar li a {
+  border-radius: 0;
+  margin-right: 0;
+  color: rgba(98, 98, 98, 0.7);
+  min-width: 70px;
+  text-transform: uppercase;
+  border-color: transparent;
+  font: {
+    family: $primary-font-set;
+    weight: 400;
+    size: 12px;
+  };
+}
+.navbar li a:hover,
+.navbar li a:focus {
+  background: transparent;
+  border-color: transparent;
+  color: #626262;
 }
 
 /* sidebar */
@@ -172,6 +185,17 @@ aside {
   }
 }
 
+/* Users index */
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
 .user_avatars {
   overflow: auto;
   margin-top: 10px;
@@ -187,55 +211,10 @@ aside {
   padding: 0;
 }
 
-/* forms */
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
-}
-
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
-}
-
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
-}
-
-/* Users index */
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
   }
 }
 
@@ -279,43 +258,75 @@ aside {
   }
 }
 
-span.picture {
-  margin-top: 10px;
-  input {
-    border: 0;
+/* miscellaneous */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* UI ELEMENTS */
+a.btn-ghost {
+  color:#ffffff;
+  border:2px solid #ffffff;
+  background:transparent;
+  font: {
+    family: $primary-font-set;
+    size: 14px;
+    weight: bold;
+  }
+  padding:5px 15px;
+  margin-top:11px;
+  text-transform:uppercase;
+}
+a.btn-ghost:hover {
+  color: $primary-blue;
+  border:2px solid $primary-blue;
+  text-decoration:none;
+}
+a.btn-ghost, a.btn-ghost:hover, a.btn-ghost:active, a.btn-ghost:visited {
+  text-decoration:none;
+}
+
+/* FORMS */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
   }
 }
 
-.navbar-brand {
-  font-size: inherit;
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
-.navbar li {
-  padding-left: 0;
-  padding-right: 0;
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
 }
-.navbar li.active a,
-.navbar li.active a:hover,
-.navbar li.active a:focus {
-  border-color: #e6e6e6;
-  color: #626262;
-  background-color: #e6e6e6;
-}
-.navbar li a {
-  border-radius: 0;
-  margin-right: 0;
-  color: rgba(98, 98, 98, 0.7);
-  min-width: 70px;
-  text-transform: uppercase;
-  border-color: transparent;
-  font: {
-    family: $primary-font-set;
-    weight: 400;
-    size: 12px;
-  };
-}
-.navbar li a:hover,
-.navbar li a:focus {
-  background: transparent;
-  border-color: transparent;
-  color: #626262;
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
