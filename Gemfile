@@ -19,7 +19,6 @@ gem 'active_link_to'
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console'
   gem 'spring'
 end
 
