@@ -176,7 +176,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   pg (~> 0.18.3)
-  puma (~> 3.4)
+  puma
   pundit
   rails (= 4.2.6)
   rails_12factor
