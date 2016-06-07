@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            redirect_to user_url, notice: "User succesfully created!" 
+            redirect_to user_url, notice: "User created" 
         else
             render :new
         end
@@ -69,7 +69,7 @@ class UsersController < ApplicationController
         
         def admin_only
             unless current_user.admin?
-              redirect_to :back, alert: "Access denied."
+              redirect_to :back, alert: "Access denied"
             end
         end
         
