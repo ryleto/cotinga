@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.6'
-gem 'pg', '~> 0.18.3'
-
+gem 'rails', '5.0.0'
+gem 'pg'
 gem 'active_link_to'
 gem 'acts-as-taggable-on'
 gem 'bootstrap-sass'
