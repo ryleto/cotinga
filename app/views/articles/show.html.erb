@@ -34,7 +34,7 @@
       </div>
     <!-- END PANEL SECTION -->                 
     <br>
-    <!-- MODAL CALLOUT -->
+    <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
       Add Comment
     </button>
@@ -46,7 +46,7 @@
       <%= link_to "View Source", @article.source, class: "btn btn-default", target: "_blank" %>
     </div>
     
-    <!-- MODAL -->
+    <!-- Modal -->
     <section class="comment_form">
         <%= render 'shared/comment_form' %>
     </section>

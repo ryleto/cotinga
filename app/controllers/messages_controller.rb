@@ -10,7 +10,8 @@ class MessagesController < ApplicationController
       MessageMailer.new_message(@message).deliver
       redirect_to contact_path, notice: "Thank you. Your message has been sent."
     else
-      render :new, alert: "An error occurred while delivering this message."
+      flash[:alert] = "An error occurred while delivering this message."
+      render :new
     end
   end
 
